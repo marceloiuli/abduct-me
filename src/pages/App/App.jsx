@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import { getUser } from "../../utilities/users-service";
 import './App.css';
 import AuthPage from "../AuthPage/AuthPage";
-import NewOrderPage from "../NewOrderPage/NewOrderPage";
+import NewOrderPage from "../NewAbductionPage/NewAbductionPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
 
