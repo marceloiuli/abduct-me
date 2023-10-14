@@ -5,7 +5,7 @@ import './EditForm.css';
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-export default function OrderHistoryPage () {
+export default function EditForm () {
     const [newAbduction, setNewAbduction] =useState({})
     const navigate=useNavigate()
     const params=useParams()
