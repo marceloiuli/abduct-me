@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const abductionSchema = new Schema({
-    Name: {type: String, required: true},
-    Phone: {type: Number, required: true},
-    Email: {type: String, required: true},
+    name: {type: String, required: true},
+    phone: {type: Number, required: true},
+    email: {type: String, required: true},
     date: {type: Date, required: true},
-    UfoChoice: {type: String, required: true},
-    AbductionExp: {type: String, required: true},
-    SpecialRequest: {type: String},
+    ufoChoice: {type: String, required: true},
+    abType: {type: String, required: true},
+    specialRequest: {type: String},
     user: { type: Schema.Types.ObjectId, ref: "User", required: true },
 }, {
     timestamps: true,

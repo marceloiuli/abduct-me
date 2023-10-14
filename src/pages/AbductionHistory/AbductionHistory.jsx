@@ -12,12 +12,11 @@ export default function AbductionHistory() {
         })()
     }, [])
     
-    const abductionsList = abductions.map((abduction, idx) => <AbductionForm abduction={abduction} />)
+    const abductionsList = abductions.map((abduction, idx) => )
 
     return (
         <>
-            <h1>Welcome Page</h1>
-            {abductionsList}
+            <div>{abductionsList}</div>
         </>
     )
 }
