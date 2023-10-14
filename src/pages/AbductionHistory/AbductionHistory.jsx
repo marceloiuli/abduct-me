@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
+import AbductionCard from "../../components/AbductionCard/AbductionCard";
 import * as abductionsAPI from "../../utilities/abductions-api"
-import AbductionForm from "../../components/AbductionForm/AbductionForm";
 
 export default function AbductionHistory() {
     const [abductions, setAbductions] = useState([])
@@ -12,7 +12,7 @@ export default function AbductionHistory() {
         })()
     }, [])
     
-    const abductionsList = abductions.map((abduction, idx) => )
+    const abductionsList = abductions.map((abduction, idx) => <AbductionCard key={idx} abduction={abduction} />)
 
     return (
         <>

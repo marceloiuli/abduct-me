@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import { getUser } from "../../utilities/users-service";
 import './App.css';
 import AuthPage from "../AuthPage/AuthPage";
+import EditAbductionPage from "../EditAbductionPage/EditAbductionPage";
 import NewAbductionPage from "../NewAbductionPage/NewAbductionPage";
 import AbductionHistory from "../AbductionHistory/AbductionHistory";
 import NavBar from "../../components/NavBar/NavBar";
@@ -18,6 +19,7 @@ export default function App() {
           <Routes>
             <Route path="/abductions/new" element={ <NewAbductionPage /> } />
             <Route path="/abductions" element={ <AbductionHistory /> } />
+            <Route path="/abductions/:id" element={ <EditAbductionPage /> } />
           </Routes>
         </>
         : 

@@ -2,15 +2,16 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import * as abductionsAPI from "../../utilities/abductions-api"
 
-export default function AbductionForm() {
-    const [abductions, setAbductions] = useState({})
+export default function AbductionForm({abduction}) {
+    const [abductions, setAbductions] = useState(abduction)
     const navigate = useNavigate()
-    
+    console.log(abduction)
+
     async function handleSubmit (evt) {
         evt.preventDefault();
         try {
             abductionsAPI.createAbductions(abductions)
-            setAbductions({Name: '', Phone: 555-555-5555, Email: '', date: new Date(), })
+            // setAbductions({Name: '', Phone: 555-555-5555, Email: '', date: new Date(), })
             navigate('/abductions')
             console.log(abductions)
         } catch(err) {
