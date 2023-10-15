@@ -3,7 +3,7 @@ export default function AbductionFormInput({inputProps}) {
     return (
         <>
             <label htmlFor={htmlFor}>{label}</label>
-            <input onChange={(evt)=>onChange(evt)} type={type} id={id} name={name} placeholder={placeholder} value={value ? value:''} />
+            <input onChange={(evt)=>onChange(evt)} type={type} id={id} name={name} placeholder={placeholder} value={value ? value : ''} />
         </>
     )    
 }
