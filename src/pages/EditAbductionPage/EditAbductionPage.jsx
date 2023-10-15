@@ -13,12 +13,13 @@ export default function EditAbductionPage() {
             const abduction = await abductionsAPI.getAbduction(id)
             setAbduction(abduction)
         })()
-    }, [id])
+    }, [])
     
     return (
         <>
-            <h1>Book my abduction!</h1>
+            <h1>Edit my abduction!</h1>
             <AbductionForm abduction={abduction}/>
+            
         </>
     )
 }

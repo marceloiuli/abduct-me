@@ -3,7 +3,7 @@ module.exports = {
   index,
   create,
   update,
-  delete: deleteAbductions,
+  delete: deleteAbduction,
   edit,
 };
 async function index(req, res) {
@@ -35,7 +35,7 @@ async function edit(req, res) {
   res.status(400).json(err)
 }
 }
-async function deleteAbductions(req, res) {
+async function deleteAbduction(req, res) {
   try{
     console.log(req.params)
   const deleteAbductions = await Abduction.findOneAndDelete({"_id": req.params.id});

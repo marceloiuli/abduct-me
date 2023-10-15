@@ -5,7 +5,7 @@ export default function AbductionCard({abduction}) {
     const {name, _id} = abduction
     const onClick = (evt) => {
         evt.preventDefault();
-        navigate('/abductions/' + _id)
+        navigate(`/abductions/${_id}`)
     }
 
     return (

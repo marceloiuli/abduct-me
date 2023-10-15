@@ -10,7 +10,7 @@ export function getAbduction (id) {
 export function createAbductions (abduction) {
     return sendRequest(BASE_URL, "POST", abduction)
 }
-export function deleteAbductions(abductionId) {
+export function deleteAbduction(abductionId) {
     return sendRequest(`${BASE_URL}/${abductionId}`, "DELETE")
 }
 export function editAbductions(abduction, id) {
