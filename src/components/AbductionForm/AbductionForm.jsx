@@ -51,49 +51,63 @@ export default function AbductionForm({abduction}) {
     }
 
     return (
-        <Form>
-            <form autoComplete="off" onSubmit={handleSubmit}>
+        <Form autoComplete="off" onSubmit={handleSubmit}>
+            <Form.Group>
                 <legend>Your Contact Information:</legend>
-                <label htmlFor="name">Your Name</label>
-                <input onChange={handleChange} type="text" id="name" name="name" placeholder="First Name & Last Name" defaultValue={abductions.name} />
+                <Form.Label htmlFor="name">Your Name</Form.Label>
+                <Form.Control onChange={handleChange} type="text" id="name" name="name" placeholder="First Name & Last Name" defaultValue={abductions.name} />
                 <label htmlFor="phone">Phone Number</label>
                 <input onChange={handleChange} type="tel" id="phone" name="phone" placeholder="Dont forget your area code!" defaultValue={abductions.phone} />
                 <label htmlFor="email">Email</label>
                 <input onChange={handleChange} type="email" id="email" name="email" placeholder="example123@email.com" defaultValue={abductions.email} />
-
+            </Form.Group>
+            <Form.Group>
                 <legend>About Your Abduction:</legend>
                 <label htmlFor="date">Requested Date</label>
                 <input onChange={handleChange} type="date" id="date" name="date" defaultValue={abductions.date ? abductions.date.split('T')[0] : ''} />
+            </Form.Group>
+            <Form.Group>
                 <label htmlFor="qty">Would you like to bring friends?</label>
-                <input onChange={handleChange} type="number" id="qty" name="qty" min="1" max="5" defaultValue="1" placeholder="5 humans maximum" />
-                <label>Please choose your preferred ufo type</label>
-                <label>
-                    <input onChange={handleChange} type="radio" name="ufoChoice" value="classic" checked={abductions.ufoChoice === 'classic'} />Classic Oval UFO
-                </label>
-                <label>
-                    <input onChange={handleChange} type="radio" name="ufoChoice" value="star" checked={abductions.ufoChoice === 'star'} />Star Wars-style Imperial Cruiser
-                </label>
-                <label>
-                    <input onChange={handleChange} type="radio" name="ufoChoice" value="battle" checked={abductions.ufoChoice === 'battle'} />Battlestar Galactica-style Viper
-                </label>
-                <label>
-                    <input onChange={handleChange} type="radio" name="ufoChoice" value="borg" checked={abductions.ufoChoice === 'borg'} />Borg-style Cube
-                </label>
-                <label htmlFor="abType">What type of abduction experience do you want?</label>
-                <select onChange={handleChange} name="abType" id="abtype">
+                <input onChange={handleChange} type="number" id="qty" name="qty" min="0" max="5" defaultValue="0" placeholder="5 humans maximum" />
+            </Form.Group>
+            <Form.Group>
+                <legend>Please choose your preferred ufo type</legend>
+                <Form.Label>
+                    <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="classic" checked={abductions.ufoChoice === 'classic'} />Classic Oval UFO
+                </Form.Label>
+                <br />
+                <Form.Label>
+                    <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="star" checked={abductions.ufoChoice === 'star'} />Star Wars-style Imperial Cruiser
+                </Form.Label>
+                <br />
+                <Form.Label>
+                    <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="battle" checked={abductions.ufoChoice === 'battle'} />Battlestar Galactica-style Viper
+                </Form.Label>
+                <br />
+                <Form.Label>
+                    <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="borg" checked={abductions.ufoChoice === 'borg'} />Borg-style Cube
+                </Form.Label>
+                <br />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label htmlFor="abType">What type of abduction experience do you want?</Form.Label>
+                <Form.Select size="lg" onChange={handleChange} name="abType" id="abtype">
                     <option defaultValue>Choose Wisely...</option>
                     <option value="tour" selected={abductions.abType === 'tour'}>Tour of the Solar System</option>
                     <option value="dinner" selected={abductions.abType === 'dinner'}>Alien dinner and dicussion</option>
                     <option value="dance" selected={abductions.abType === 'dance'}>Alien dance lessons</option>
                     <option value="whale" selected={abductions.abType === 'whale'}>Whale watching</option>
-                </select>
-
+                </Form.Select>
+            </Form.Group>
+            <Form.Group>
                 <label htmlFor="specialRequests">Special Requests:</label>
                 <textarea onChange={handleChange} name="specialRequests" id="specialRequests" cols="30" rows="10" placeholder="Tell us everything..." maxLength="180" defaultValue={abductions.specialRequest}></textarea>
-                <Button type="submit">Submit</Button>
-                <Button onClick={onDelete} >{abductions._id ? "DELETE" : "CANCEL"}</Button>
-            </form>
-            
+                <br />
+                <Button variant="success" type="submit">SUBMIT</Button>
+                <br />
+                <br />
+                <Button variant="danger" onClick={onDelete} >{abductions._id ? "DELETE" : "CANCEL"}</Button>
+            </Form.Group>
         </Form>
     )
 }
