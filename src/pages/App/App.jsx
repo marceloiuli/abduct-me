@@ -12,20 +12,20 @@ export default function App() {
   const [user, setUser] = useState(getUser()) //the initial value for the state is the return from the getUser function
 
   return (
-    <main className="App">
-      {user ? 
-        <>
-          <NavBar user={user} setUser={setUser} />
-          <Routes>
-            <Route path="/abductions/new" element={ <NewAbductionPage /> } />
-            <Route path="/abductions" element={ <AbductionHistory /> } />
-            <Route path="/abductions/:id" element={ <EditAbductionPage /> } />
-          </Routes>
-        </>
-        : 
-        <AuthPage setUser={setUser}/>
-      }
-    </main>
+      <main className="App">
+        {user ? 
+          <>
+            <NavBar user={user} setUser={setUser} />
+            <Routes>
+              <Route path="/abductions/new" element={ <NewAbductionPage /> } />
+              <Route path="/abductions" element={ <AbductionHistory /> } />
+              <Route path="/abductions/:id" element={ <EditAbductionPage /> } />
+            </Routes>
+          </>
+          : 
+          <AuthPage setUser={setUser}/>
+        }
+      </main>
   );
 }
 

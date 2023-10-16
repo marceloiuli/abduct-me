@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom"
-import * as userService from "../../utilities/users-service"
+import { Link } from "react-router-dom";
+import * as userService from "../../utilities/users-service";
+import Nav from "react-bootstrap/Nav";
 
 export default function NavBar({user, setUser}) {
 
@@ -8,14 +9,27 @@ export default function NavBar({user, setUser}) {
         setUser(null)
     }
     return (
-        <nav>
-            <Link to="/abductions">Booking History</Link>
-            &nbsp; | &nbsp;
-            <Link to="/abductions/new">Start Form</Link>
-            &nbsp;  &nbsp;
-            <br />
-            <span> Welcome, {user.name} </span> 
-            &nbsp;  &nbsp; <Link to='' onClick={handleLogOut}>Log Out </Link>
-        </nav>
+        <Nav className="justify-content-center">
+            <Nav.Item as="li">
+                <Link to="/">Home</Link>
+            </Nav.Item>
+            &nbsp; &nbsp;
+            <Nav.Item as="li">
+                <Link to="/abductions">Booking History</Link>
+            </Nav.Item>
+            &nbsp; &nbsp;
+            <Nav.Item as="li">
+                <Link to="/abductions/new">Start Form</Link>
+            &nbsp; &nbsp;
+            </Nav.Item>
+            &nbsp; &nbsp;
+            <Nav.Item as="li">
+                <span>Welcome, {user.name}</span>
+            </Nav.Item>
+            &nbsp; &nbsp;
+            <Nav.Item as="li">
+                <Link to='' onClick={handleLogOut}>Log Out </Link>
+            </Nav.Item>
+        </Nav>
     )
 }

@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import "./AbductionCard.css"
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 export default function AbductionCard({abduction}) {
     const navigate = useNavigate();
@@ -9,12 +12,16 @@ export default function AbductionCard({abduction}) {
     }
 
     return (
-        <div>
-            <p>{name}</p>
-            <p>{email}</p>
-            <p>{abType}</p>
-            <p>{date.split('T')[0]}</p>
-            <button onClick={onClick}>Update</button>
-        </div>
+        <Card style={{ width: '20rem' }} id="cardStyle">
+            <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                <Card.Subtitle>{email}</Card.Subtitle>
+                <br />
+                <Card.Text>{abType}</Card.Text>
+                <Card.Subtitle>{date.split('T')[0]}</Card.Subtitle>
+                <br />
+                <Button variant="dark" onClick={onClick}>Update</Button>
+            </Card.Body>
+        </Card>
     ) 
-} 
+}
