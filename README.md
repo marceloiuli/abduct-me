@@ -4,13 +4,13 @@ Abduct-Me is an "interactive" app I developed for users with an interest in alie
 
 ## Technologies Used:
 
-*Mongoose
-*MongoDB
-*React
-*Javascript
-*Node.js
-*CSS
-*[Trello Board](https://trello.com/b/94vgBiV0/abduct "trello link")
+* Mongoose
+* MongoDB
+* React
+* Javascript
+* Node.js
+* CSS
+* [Trello Board](https://trello.com/b/94vgBiV0/abduct "trello link")
 
 ### Getting Started
 
