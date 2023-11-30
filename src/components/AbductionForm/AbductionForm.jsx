@@ -96,21 +96,21 @@ export default function AbductionForm({abduction}) {
 
                 <Form.Group>
 
-                    <legend>Please choose your preferred ufo type</legend>
+                    <legend>Please choose your preferred ufo type:</legend>
                     <Form.Label>
-                        <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="classic" checked={abductions.ufoChoice === 'classic'} />Classic Oval UFO
+                        <Form.Check onChange={handleChange} type="radio" label="Classic Oval UFO" name="ufoChoice" value="classic" checked={abductions.ufoChoice === 'classic'} />
                     </Form.Label>
                     <br />
                     <Form.Label>
-                        <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="star" checked={abductions.ufoChoice === 'star'} />Star Wars-style Imperial Cruiser
+                        <Form.Check onChange={handleChange} type="radio" label="Star Wars-style Imperial Cruiser" name="ufoChoice" value="star" checked={abductions.ufoChoice === 'star'} />
                     </Form.Label>
                     <br />
                     <Form.Label>
-                        <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="battle" checked={abductions.ufoChoice === 'battle'} />Battlestar Galactica-style Viper
+                        <Form.Check onChange={handleChange} type="radio" label="Battlestar Galactica-style Viper" name="ufoChoice" value="battle" checked={abductions.ufoChoice === 'battle'} />
                     </Form.Label>
                     <br />
                     <Form.Label>
-                        <Form.Check onChange={handleChange} type="radio" name="ufoChoice" value="borg" checked={abductions.ufoChoice === 'borg'} />Borg-style Cube
+                        <Form.Check onChange={handleChange} type="radio" label="Borg-style Cube" name="ufoChoice" value="borg" checked={abductions.ufoChoice === 'borg'} />
                     </Form.Label>
                     <br />
 
